@@ -3,6 +3,8 @@
 #include <sstream>
 #include <vector>
 
+Music music("music.ogg");
+
 Game::Game() :
     window(sf::VideoMode(Constants::WINDOW_WIDTH, Constants::WINDOW_HEIGHT), "Tetris"),
     board(),
@@ -60,6 +62,7 @@ void Game::initializeText() {
 }
 
 void Game::run() {
+    music.play();
     sf::Clock clock;
     while (window.isOpen()) {
         float deltaTime = clock.restart().asSeconds();
